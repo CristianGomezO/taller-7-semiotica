@@ -1,0 +1,172 @@
+/* Estilo general del cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #b8c4b6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Encabezado */
+header {
+    background-color: #b8c4b6;
+    display: flex;
+    justify-content: center; /* Centrar el contenido del header */
+    align-items: center; /* Alinear verticalmente en el centro */
+    padding: 20px;
+    border-bottom: 2px solid #ccc;
+    height: 100px;
+    position: relative; /* Para posicionar elementos dentro */
+}
+
+/* Logo */
+.logo {
+    width: 70px; 
+    height: auto;
+    position: absolute; 
+    left: 50%; /* Centrar horizontalmente */
+    transform: translateX(-50%); /* Centrar el logo */
+    z-index: 10; /* Asegura que este por encima del menu */
+}
+
+
+
+/* Título */
+.cuts-title {
+    font-size: 2rem; /* Ajusta el tamaño según sea necesario */
+    margin: 20px 0; /* Margen superior e inferior */
+}
+
+/* Cuerpo */
+main {
+    flex: 1;
+    display: flex;
+    padding: 20px;
+    margin-top: 100px; /* Ajusta este valor para mover los contenedores hacia abajo */
+}
+/* Menú de navegación */
+.menu {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0; 
+    left: 0;
+    bottom: 100px; 
+    z-index: 1; 
+}
+
+/* Estilo para la imagen de perfil */
+.profile-image {
+    margin-bottom: 20px; 
+    width: 100px;  
+    height: 100px; 
+    align-self: center; 
+}
+
+/* Botones del menú de navegación */
+.menu-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 5px; 
+}
+
+.menu-button:first-child {
+    margin-top: 0; 
+}
+
+.logout-button {
+    background-color: #dc3545;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: auto;
+}
+
+
+/* Contenedor de cortes */
+.main-content {
+    margin-left: 220px; 
+    flex: 1;
+}
+
+.cuts-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: -10px;
+}
+
+.cut-card {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 30%;
+    margin-bottom: 20px;
+}
+
+.cut-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.reserve-button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Estilo del pie de página */
+footer {
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #333;
+    border-top: 2px solid #ccc;
+    margin-top: auto;
+    height: 100px;
+}
+
+.footer-logo {
+    width: 70px;
+    height: auto;
+}
+
+.center-footer, .right-footer {
+    text-align: center;
+}
+
+.center-footer h2, .right-footer h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.center-footer p, .right-footer p {
+    margin: 5px 0;
+    font-size: 0.8rem;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
