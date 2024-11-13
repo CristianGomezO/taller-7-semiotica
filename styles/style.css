@@ -1,3 +1,13 @@
+:root {
+    --color-fuente: #ffffff;
+    --color-fondo: #000;
+}
+
+[theme="light"] {
+    --color-fuente: #000;
+    --color-fondo: #fff;
+}
+
 /* Estilo general del cuerpo */
 body {
     font-family: Arial, sans-serif;
@@ -13,30 +23,38 @@ body {
 header {
     background-color: #b8c4b6;
     display: flex;
-    justify-content: center; /* Centrar el contenido del header */
-    align-items: center; /* Alinear verticalmente en el centro */
+    justify-content: center;
+    /* Centrar el contenido del header */
+    align-items: center;
+    /* Alinear verticalmente en el centro */
     padding: 20px;
     border-bottom: 2px solid #ccc;
     height: 100px;
-    position: relative; /* Para posicionar elementos dentro */
+    position: relative;
+    /* Para posicionar elementos dentro */
 }
 
 /* Logo */
 .logo {
-    width: 70px; 
+    width: 70px;
     height: auto;
-    position: absolute; 
-    left: 50%; /* Centrar horizontalmente */
-    transform: translateX(-50%); /* Centrar el logo */
-    z-index: 10; /* Asegura que este por encima del menu */
+    position: absolute;
+    left: 50%;
+    /* Centrar horizontalmente */
+    transform: translateX(-50%);
+    /* Centrar el logo */
+    z-index: 10;
+    /* Asegura que este por encima del menu */
 }
 
 
 
 /* Título */
 .cuts-title {
-    font-size: 2rem; /* Ajusta el tamaño según sea necesario */
-    margin: 20px 0; /* Margen superior e inferior */
+    font-size: 2rem;
+    /* Ajusta el tamaño según sea necesario */
+    margin: 20px 0;
+    /* Margen superior e inferior */
 }
 
 /* Cuerpo */
@@ -44,11 +62,13 @@ main {
     flex: 1;
     display: flex;
     padding: 20px;
-    margin-top: 100px; /* Ajusta este valor para mover los contenedores hacia abajo */
+    margin-top: 100px;
+    /* Ajusta este valor para mover los contenedores hacia abajo */
 }
+
 /* Menú de navegación */
 .menu {
-    background-color: white;
+    background-color: var(--color-fondo);
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -56,18 +76,18 @@ main {
     display: flex;
     flex-direction: column;
     position: fixed;
-    top: 0; 
+    top: 0;
     left: 0;
-    bottom: 100px; 
-    z-index: 1; 
+    bottom: 100px;
+    z-index: 1;
 }
 
 /* Estilo para la imagen de perfil */
 .profile-image {
-    margin-bottom: 20px; 
-    width: 100px;  
-    height: 100px; 
-    align-self: center; 
+    margin-bottom: 20px;
+    width: 100px;
+    height: 100px;
+    align-self: center;
 }
 
 /* Botones del menú de navegación */
@@ -77,11 +97,11 @@ main {
     padding: 10px;
     border: none;
     cursor: pointer;
-    margin-bottom: 5px; 
+    margin-bottom: 5px;
 }
 
 .menu-button:first-child {
-    margin-top: 0; 
+    margin-top: 0;
 }
 
 .logout-button {
@@ -96,7 +116,7 @@ main {
 
 /* Contenedor de cortes */
 .main-content {
-    margin-left: 220px; 
+    margin-left: 220px;
     flex: 1;
 }
 
@@ -151,16 +171,19 @@ footer {
     height: auto;
 }
 
-.center-footer, .right-footer {
+.center-footer,
+.right-footer {
     text-align: center;
 }
 
-.center-footer h2, .right-footer h2 {
+.center-footer h2,
+.right-footer h2 {
     font-size: 1.2rem;
     margin-bottom: 10px;
 }
 
-.center-footer p, .right-footer p {
+.center-footer p,
+.right-footer p {
     margin: 5px 0;
     font-size: 0.8rem;
 }
@@ -169,4 +192,111 @@ footer {
     display: flex;
     justify-content: center;
     gap: 10px;
+}
+
+input.is-valid,
+select.is-valid,
+textarea.is-valid {
+    border-color: #28a745;
+    background-color: #e6ffed;
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+}
+
+input.is-invalid,
+select.is-invalid,
+textarea.is-invalid {
+    border-color: #dc3545;
+    background-color: #ffe6e6;
+    box-shadow: 0 0 5px rgba(220, 53, 69, 0.5);
+}
+
+label.is-invalid {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 5px;
+    display: block;
+}
+
+#switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+#switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-fuente);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--color-fondo);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: var(--color-fuente);
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px var(--color-fuente);
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.classification-stars label {
+    color: grey;
+}
+
+.classification-stars input { 
+    display: none;
+}
+
+.classification-stars {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+}
+
+.classification-stars label:hover {
+    color:orange;
+}
+
+.classification-stars label:hover ~ label {
+    color:orange;
+}
+
+.classification-stars input[type = "radio"]:checked ~ label{
+    color:orange;
 }

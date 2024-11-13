@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #b8c4b6; 
+    background-color: #b8c4b6; /* Color de fondo igual que el encabezado */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -33,11 +33,11 @@ header {
 h1 {
     font-size: 1.5rem;
     margin: 0;
-    color: black; 
+    color: black; /* Color negro para el texto */
     text-transform: uppercase; 
 }
 
-/* Formulario de Iniciar Sesion */
+/* Formulario de Registro */
 main {
     flex: 1;
     display: flex;
@@ -55,15 +55,52 @@ form {
     max-width: 800px;
 }
 
-/* Estilos para el formulario de Iniciar Sesión */
-.form-fields {
+.perfil-image-selection {
     display: flex;
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
-input[type="email"], input[type="password"] {
+.perfil-image-selection label {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.perfil-image-selection label input[type="radio"] {
+    display: none;
+}
+
+.perfil-image-selection label img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    transition: transform 0.3s, border 0.3s;
+    border: 2px solid transparent;
+}
+
+.perfil-image-selection label input[type="radio"]:checked + img {
+    border-color: #007bff;
+    transform: scale(1.1);
+}
+
+/* Estilos para el formulario de registro */
+.form-fields {
+    display: flex;
+    gap: 20px; 
+}
+
+.left, .right {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+    width: 100%;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
     padding: 10px;
     width: 100%;
     border: 1px solid #ccc;
@@ -75,18 +112,18 @@ input[type="email"], input[type="password"] {
 /* Estilo del pie de página */
 footer {
     background-color: white;
-    padding: 20px; 
+    padding: 20px; /* Ajustar padding para igualar el encabezado */
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: #333;
     border-top: 2px solid #ccc;
     margin-top: auto;
-    height: 100px; 
+    height: 100px; /* Fijar altura del pie de página */
 }
 
 .footer-logo {
-    width: 70px; 
+    width: 70px; /* Tamaño del logo en el pie de página */
     height: auto;
 }
 
@@ -115,19 +152,7 @@ footer {
     height: 25px;
 }
 
-/* Estilos adicionales para el botón */
+
 .btn {
-    padding: 10px 20px; 
-}
-
-/* Estilo para el texto de "Olvidé mi contraseña" */
-.forgot-password {
-    color: red; 
-    font-size: 0.9rem; 
-}
-
-.form-fields img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+    padding: 10px 20px; /* Ajustar tamaño del boton */
 }

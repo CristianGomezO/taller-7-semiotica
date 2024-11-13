@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" theme="light">
 <head>
     <title>Servicios de Barbería</title>
     <meta charset="utf-8" />
@@ -22,13 +22,16 @@
 <body>
     <!-- Encabezado -->
     <header>
-        
         <img src="assets/images/logo.png" alt="Logo" class="logo">
     </header>
 
     <!-- Menú de navegación -->
     <aside class="menu">
         <img src="assets/images/perfil.jpg" alt="Icono de Perfil" class="profile-image">
+        <label id="switch">
+            <input type="checkbox" checked>
+            <span class="slider round"></span>
+        </label>
         <p id="emailSessionStorage"></p>
         <button class="menu-button">Menú</button>
         <button class="menu-button">Catálogo</button>
@@ -53,8 +56,20 @@
                                 <li>Duración: 30 min</li>
                                 <li>Acceso al centro de ayuda</li>
                             </ul>
-                            <button type="button" class="w-100 btn btn-lg btn-success" onclick="addPlanToTable('basic', 10)">Agregar</button>
+                            <button type="button" class="w-100 btn btn-lg btn-success" onclick="addPlanToTable('basic', 10, 1)">Agregar</button>
                             <input type="number" class="form-control mt-2" placeholder="Cantidad" name="basicQty" id="basicQty">
+                            <p class="classification-stars">
+                                <input id="radioStar11" type="radio" name="stars1" value="5">
+                                <label for="radioStar11">★</label>
+                                <input id="radioStar12" type="radio" name="stars1" value="4">
+                                <label for="radioStar12">★</label>
+                                <input id="radioStar13" type="radio" name="stars1" value="3">
+                                <label for="radioStar13">★</label>
+                                <input id="radioStar14" type="radio" name="stars1" value="2">
+                                <label for="radioStar14">★</label>
+                                <input id="radioStar15" type="radio" name="stars1" value="1">
+                                <label for="radioStar15">★</label>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -72,8 +87,20 @@
                                 <li>Descuento en productos</li>
                                 
                             </ul>
-                            <button type="button" class="w-100 btn btn-lg btn-success" onclick="addPlanToTable('premium', 20)">Agregar</button>
+                            <button type="button" class="w-100 btn btn-lg btn-success" onclick="addPlanToTable('premium', 20, 2)">Agregar</button>
                             <input type="number" class="form-control mt-2" placeholder="Cantidad" name="premiumQty" id="premiumQty">
+                            <p class="classification-stars">
+                                <input id="radioStar21" type="radio" name="stars2" value="5">
+                                <label for="radioStar21">★</label>
+                                <input id="radioStar22" type="radio" name="stars2" value="4">
+                                <label for="radioStar22">★</label>
+                                <input id="radioStar23" type="radio" name="stars2" value="3">
+                                <label for="radioStar23">★</label>
+                                <input id="radioStar24" type="radio" name="stars2" value="2">
+                                <label for="radioStar24">★</label>
+                                <input id="radioStar25" type="radio" name="stars2" value="1">
+                                <label for="radioStar25">★</label>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -90,8 +117,20 @@
                                 <li>Duración: 60 min</li>
                                 <li>Bebida incluida</li>
                             </ul>
-                            <button type="button" class="w-100 btn btn-lg btn-success" onclick="addPlanToTable('complete', 40)">Agregar</button>
+                            <button type="button" class="w-100 btn btn-lg btn-success" onclick="addPlanToTable('complete', 40, 3)">Agregar</button>
                             <input type="number" class="form-control mt-2" placeholder="Cantidad" name="completeQty" id="completeQty">
+                            <p class="classification-stars">
+                                <input id="radioStar31" type="radio" name="stars3" value="5">
+                                <label for="radioStar31">★</label>
+                                <input id="radioStar32" type="radio" name="stars3" value="4">
+                                <label for="radioStar32">★</label>
+                                <input id="radioStar33" type="radio" name="stars3" value="3">
+                                <label for="radioStar33">★</label>
+                                <input id="radioStar34" type="radio" name="stars3" value="2">
+                                <label for="radioStar34">★</label>
+                                <input id="radioStar35" type="radio" name="stars3" value="1">
+                                <label for="radioStar35">★</label>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -149,6 +188,7 @@
                             <th>Valor servicio</th>
                             <th>Cantidad</th>
                             <th>Total por Servicio</th>
+                            <th>Calificación</th>
                         </tr>
                     </thead>
                     <tbody id="servicesTableBody">
